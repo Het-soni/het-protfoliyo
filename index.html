@@ -1,0 +1,893 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f4ed">
+
+  <title>Het Soni® — Creative Developer</title>
+
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <script defer
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js">
+  </script>
+  <script defer
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js">
+  </script>
+  <script defer src="script.js"></script>
+</head>
+
+<body class="loading">
+
+  <!-- LOADER -->
+  <div class="loader" id="loader">
+    <div class="loader-panel loader-upper"
+         id="loaderUpper"></div>
+    <div class="loader-panel loader-lower"
+         id="loaderLower"></div>
+
+    <div class="loader-content" id="loaderContent">
+      <div class="loader-header">
+        <span>HET SONI®</span>
+        <span>PORTFOLIO / 2026</span>
+      </div>
+
+      <div class="loader-number">
+        <strong id="counter">000</strong>
+        <small>%</small>
+      </div>
+
+      <div class="loader-footer">
+        <span>LOADING THE EXPERIENCE</span>
+        <span>DESIGN × CODE</span>
+      </div>
+    </div>
+
+    <div class="split-line" id="splitLine"></div>
+  </div>
+
+  <!-- FIXED HEADER -->
+  <header class="header" id="header">
+
+    <a href="#home" class="logo">
+      HETSONI<sup>®</sup>
+    </a>
+
+    <nav class="desktop-nav" id="nav"
+         aria-label="Main navigation">
+
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#journey">Journey</a>
+      <a href="#orbit">Orbit</a>
+      <a href="#awards">Awards</a>
+
+
+
+      <a href="https://github.com/panther20006"
+         target="_blank"
+         rel="noopener noreferrer">
+        GitHub
+      </a>
+
+      <a href="mailto:hetjsoni1383@gmail.com"
+         class="nav-contact">
+        Contact ↗
+      </a>
+    </nav>
+
+    <button class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Toggle menu"
+            aria-controls="nav"
+            aria-expanded="false">☰</button>
+  </header>
+
+  <main>
+    <div class="slides-stage" id="slidesStage">
+
+      <!-- ==================================
+           SLIDE 01 : HOME
+      =================================== -->
+      <section class="hero scene" id="home">
+
+        <div class="hero-background-name"
+             aria-hidden="true">
+          HET SONI
+        </div>
+
+        <div class="hero-content">
+          <p class="intro-text">
+            HI, I'M HET SONI —
+          </p>
+
+          <h1>
+            <span>FULL-STACK</span>
+            <span class="red-text">DEVELOPER.</span>
+          </h1>
+
+          <p class="hero-description">
+            I build interactive websites and
+            AI-powered projects that turn creative
+            ideas into useful digital experiences.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#work" class="btn btn-red">
+              See my work ↗
+            </a>
+
+            <a href="mailto:hetjsoni1383@gmail.com"
+               class="btn btn-outline">
+              Contact me ↗
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-person" id="heroPerson">
+          <img src="assets/face-front.webp"
+               class="face-image"
+               id="faceFront"
+               alt="Het Soni front portrait">
+
+          <img src="assets/face-left.webp"
+               class="face-image"
+               id="faceLeft"
+               alt=""
+               aria-hidden="true">
+        </div>
+
+        <div class="scene-footer hero-footer">
+          <span>SCROLL TO EXPLORE ↓</span>
+          <span>01 / 07</span>
+        </div>
+      </section>
+
+      <!-- ==================================
+           SLIDE 02 : ABOUT
+      =================================== -->
+      <section class="about-slide scene" id="about">
+
+        <div class="about-glow"></div>
+
+        <div class="scene-top about-label">
+          <span>(02) — ABOUT ME</span>
+          <span>GET TO KNOW ME ↗</span>
+        </div>
+
+        <div class="about-visual">
+          <span class="about-outline"
+                aria-hidden="true">02</span>
+
+          <img src="assets/seated.webp"
+               class="about-person"
+               id="aboutPerson"
+               alt="Het Soni seated">
+
+          <span class="about-image-caption">
+            HET SONI / CREATIVE DEVELOPER
+          </span>
+        </div>
+
+        <div class="about-information">
+          <p class="about-small">
+            HELLO, I'M HET SONI
+          </p>
+
+          <h2 class="about-heading">
+            <span class="about-word">MORE</span>
+            <span class="about-word">THAN</span>
+            <span class="about-word red-word">
+              JUST CODE.
+            </span>
+          </h2>
+
+          <p class="about-paragraph">
+            I'm a Computer Engineering student at
+            Indus University. I enjoy building
+            creative websites, experimenting with
+            artificial intelligence and bringing
+            new ideas to life.
+          </p>
+
+          <div class="about-facts">
+            <div class="about-fact">
+              <strong>01</strong>
+              <span>COMPUTER<br>ENGINEERING</span>
+            </div>
+
+            <div class="about-fact">
+              <strong>02</strong>
+              <span>WEB<br>DEVELOPMENT</span>
+            </div>
+
+            <div class="about-fact">
+              <strong>03</strong>
+              <span>AI &amp;<br>CREATIVITY</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="scene-footer about-bottom">
+          <span>PASSION MEETS CREATIVITY</span>
+          <span>02 / 07</span>
+        </div>
+      </section>
+
+      <!-- ==================================
+           SLIDE 03 : SELECTED PROJECTS
+           LEFT PROJECT / RIGHT LAPTOP
+      =================================== -->
+      <section class="projects-slide scene" id="work">
+
+        <div class="projects-background-number"
+             id="projectsBigNumber"
+             aria-hidden="true">01</div>
+
+        <div class="scene-top projects-top">
+          <span>(03) — SELECTED WORK</span>
+          <span id="projectCounter">01 / 03</span>
+        </div>
+
+        <!-- LEFT PROJECT AREA -->
+        <div class="projects-content">
+
+          <div class="projects-intro">
+            <p>MY CREATIVE WORK</p>
+            <h2>SELECTED <em>PROJECTS.</em></h2>
+          </div>
+
+          <div class="project-stack" id="projectStack">
+
+            <!-- PANTHER AI -->
+            <article class="project-panel project-panel-1">
+              <div class="project-panel-content">
+
+                <span class="project-number">
+                  PROJECT / 01
+                </span>
+
+                <h3 class="project-heading">
+                  PANTHER <span>AI.</span>
+                </h3>
+
+                <p class="project-description">
+                  A personal AI assistant built with
+                  Python, Flask and SQLite.
+                </p>
+
+                <div class="project-tags">
+                  <span>PYTHON</span>
+                  <span>FLASK</span>
+                  <span>SQLITE</span>
+                </div>
+
+                <a class="project-link"
+                   href="https://github.com/panther20006"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                  EXPLORE PROJECT ↗
+                </a>
+
+                <div class="project-preview">
+                  <img src="assets/panther-ai.png"
+                       alt="Panther AI project banner"
+                       draggable="false">
+                </div>
+              </div>
+            </article>
+
+            <!-- NEXCHAT -->
+            <article class="project-panel project-panel-2">
+              <div class="project-panel-content">
+
+                <span class="project-number">
+                  PROJECT / 02
+                </span>
+
+                <h3 class="project-heading">
+                  NEX<span>CHAT.</span>
+                </h3>
+
+                <p class="project-description">
+                  A chat application focused on smooth
+                  and connected conversations.
+                </p>
+
+                <div class="project-tags">
+                  <span>CHAT APP</span>
+                  <span>MESSAGING</span>
+                  <span>WEB</span>
+                </div>
+
+                <a class="project-link"
+                   href="https://github.com/panther20006"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                  EXPLORE PROJECT ↗
+                </a>
+
+                <div class="project-preview">
+                  <img src="assets/nexchat.png"
+                       alt="NexChat project banner"
+                       draggable="false">
+                </div>
+              </div>
+            </article>
+
+            <!-- DORAEMON WORLD -->
+            <article class="project-panel project-panel-3">
+              <div class="project-panel-content">
+
+                <span class="project-number">
+                  PROJECT / 03
+                </span>
+
+                <h3 class="project-heading">
+                  DORAEMON <span>WORLD.</span>
+                </h3>
+
+                <p class="project-description">
+                  An interactive fan website with
+                  movies, characters, gadgets,
+                  music and more.
+                </p>
+
+                <div class="project-tags">
+                  <span>HTML</span>
+                  <span>CSS</span>
+                  <span>JAVASCRIPT</span>
+                </div>
+
+                <a class="project-link"
+                   href="https://panther20006.github.io/doaeramon/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                  VISIT WEBSITE ↗
+                </a>
+
+                <div class="project-preview">
+                  <img src="assets/doraemon-world.png"
+                       alt="Doraemon World banner"
+                       draggable="false">
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+          <!-- PROGRESS -->
+          <div class="projects-progress">
+            <span id="progressCurrent">01</span>
+
+            <div class="progress-track">
+              <div class="progress-fill"
+                   id="projectProgressFill"></div>
+            </div>
+
+            <span>07</span>
+          </div>
+        </div>
+
+        <!-- RIGHT LAPTOP CHARACTER -->
+        <div class="projects-visual">
+          <img src="assets/laptop.webp"
+               id="projectsPerson"
+               class="projects-person"
+               alt="Developer using laptop">
+        </div>
+
+        <div class="scene-footer projects-bottom">
+          <span>SCROLL TO SWITCH PROJECTS ↓</span>
+          <span>03 / 07</span>
+        </div>
+      </section>
+      <!-- ==================================
+     SLIDE 04 : JOURNEY
+=================================== -->
+<section class="journey-slide scene" id="journey">
+
+  <div
+    class="journey-background-year"
+    id="journeyBackgroundYear"
+    aria-hidden="true">
+    2024
+  </div>
+
+  <div class="scene-top journey-top">
+    <span>(04) — JOURNEY</span>
+    <span id="journeyCounter">01 / 04</span>
+  </div>
+
+  <!-- LEFT CHARACTER -->
+  <div class="journey-visual">
+    <img
+      src="assets/portrait.webp"
+      id="journeyPerson"
+      class="journey-person"
+      alt="Het Soni journey portrait"
+    >
+  </div>
+
+  <!-- RIGHT CONTENT -->
+  <div class="journey-content">
+
+    <p class="journey-kicker">LEARNING OUT LOUD.</p>
+
+    <h2 class="journey-heading">
+      MY <span>JOURNEY.</span>
+    </h2>
+
+    <div class="journey-timeline" id="journeyTimeline">
+
+      <article class="journey-item active" data-year="2024">
+        <span class="journey-dot"></span>
+        <div class="journey-item-body">
+          <small>2024 — PRESENT</small>
+          <h3>COMPUTER ENGINEERING</h3>
+          <p>Indus University — building a strong base in programming and development.</p>
+        </div>
+      </article>
+
+      <article class="journey-item" data-year="2025">
+        <span class="journey-dot"></span>
+        <div class="journey-item-body">
+          <small>2025</small>
+          <h3>DORAEMON WORLD</h3>
+          <p>Created a fun interactive fan website with movies, gadgets, characters and music.</p>
+        </div>
+      </article>
+
+      <article class="journey-item" data-year="2026">
+        <span class="journey-dot"></span>
+        <div class="journey-item-body">
+          <small>2026</small>
+          <h3>PANTHER AI &amp; NEXCHAT</h3>
+          <p>Worked on AI assistant and chat-based products with creative UI and real features.</p>
+        </div>
+      </article>
+
+      <article class="journey-item" data-year="2027">
+        <span class="journey-dot"></span>
+        <div class="journey-item-body">
+          <small>2027</small>
+          <h3>KEEP LEARNING, KEEP BUILDING</h3>
+          <p>Focused on mastering full-stack development, AI projects and stronger portfolio work.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+  <div class="scene-footer journey-bottom">
+    <span>LEARNING NEVER STOPS ↓</span>
+    <span>04 / 04</span>
+  </div>
+</section>
+
+
+<!-- =====================================
+     SLIDE 05 - EVERYTHING IN ORBIT
+====================================== -->
+
+<section class="orbit-slide scene" id="orbit">
+
+  <div class="scene-top orbit-top">
+    <span>(05) — TOOLKIT</span>
+    <span>CREATIVE DEVELOPER / 2026</span>
+  </div>
+
+  <!-- LEFT HEADING -->
+  <div class="orbit-content">
+
+    <p class="orbit-kicker">
+      (05) — MY TOOLKIT
+    </p>
+
+    <h2 class="orbit-heading">
+      <span>EVERYTHING</span>
+      <span>IN <em>ORBIT.</em></span>
+    </h2>
+
+    <p class="orbit-description">
+      Technologies I use to bring ideas
+      to life.
+    </p>
+
+  </div>
+
+  <!-- CENTER CHARACTER AND SKILLS -->
+  <div class="orbit-universe" id="orbitUniverse">
+
+    <div class="orbit-glow"></div>
+
+    <!-- CENTER PHOTO -->
+    <div class="orbit-character">
+      <img
+        src="assets/face-front.webp"
+        id="orbitPerson"
+        alt="Het Soni"
+      >
+    </div>
+
+    <!-- ROTATING RED SKILLS -->
+    <div class="orbit-floating">PYTHON</div>
+    <div class="orbit-floating">JAVASCRIPT</div>
+    <div class="orbit-floating">REACT</div>
+    <div class="orbit-floating">FLASK</div>
+    <div class="orbit-floating">MONGODB</div>
+    <div class="orbit-floating">SQL</div>
+    <div class="orbit-floating">GIT</div>
+    <div class="orbit-floating">DOCKER</div>
+    <div class="orbit-floating">HTML</div>
+    <div class="orbit-floating">CSS</div>
+    <div class="orbit-floating">FASTAPI</div>
+    <div class="orbit-floating">POSTGRESQL</div>
+
+  </div>
+
+  <!-- DIAGONAL MOVING MARQUEE -->
+  <div class="orbit-marquee">
+
+    <div class="orbit-marquee-track">
+      <span>
+        PYTHON ✳ JAVASCRIPT ✳ REACT ✳
+        FLASK ✳ MONGODB ✳ SQL ✳
+        DOCKER ✳ GIT ✳
+      </span>
+
+      <span aria-hidden="true">
+        PYTHON ✳ JAVASCRIPT ✳ REACT ✳
+        FLASK ✳ MONGODB ✳ SQL ✳
+        DOCKER ✳ GIT ✳
+      </span>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="scene-footer orbit-bottom">
+    <span>TECHNOLOGY IN MOTION</span>
+    <span>05 / 05</span>
+  </div>
+
+</section>
+
+<!-- ==========================================
+     SLIDE 06 - AWARDS / PROOF OF WORK
+========================================== -->
+
+<section class="awards-slide scene" id="awards">
+
+  <div class="scene-top awards-top">
+    <span>(06) — PROOF OF WORK</span>
+    <span>LEARN • BUILD • IMPROVE</span>
+  </div>
+
+  <!-- LEFT -->
+  <div class="awards-content">
+
+    <p class="awards-kicker">
+      MY CREATIVE JOURNEY
+    </p>
+
+    <h2 class="awards-heading">
+      PROOF OF <em>WORK.</em>
+    </h2>
+
+    <!-- Replace example counts with real values -->
+    <div class="awards-stats">
+      <div class="awards-stat awards-stat-red">
+        <strong data-count="7">0</strong>
+        <span>FEATURED PROJECTS</span>
+      </div>
+
+      <div class="awards-stat">
+        <strong data-count="3">0</strong>
+        <span>TECH AREAS</span>
+      </div>
+
+      <div class="awards-stat">
+        <strong data-count="4">0</strong>
+        <span>PORTFOLIO MILESTONES</span>
+      </div>
+    </div>
+
+    <div class="awards-carousel-title">
+      <span>SELECTED WORK</span>
+      <span id="awardCardCounter">01 / 07</span>
+    </div>
+
+    <!-- 3D CAROUSEL -->
+    <div class="awards-carousel" id="awardsCarousel">
+
+      <div class="awards-card" data-index="0">
+        <div class="awards-card-inner red-card">
+          <span>01 / AI DEVELOPMENT</span>
+          <h3>PANTHER<br>AI</h3>
+          <p>Personal AI Assistant</p>
+          <small>PYTHON · FLASK · SQLITE</small>
+        </div>
+      </div>
+
+      <div class="awards-card" data-index="1">
+        <div class="awards-card-inner blue-card">
+          <span>02 / COMMUNICATION</span>
+          <h3>NEX<br>CHAT</h3>
+          <p>Modern Chat Experience</p>
+          <small>WEB · MESSAGING · UI</small>
+        </div>
+      </div>
+
+      <div class="awards-card" data-index="2">
+        <div class="awards-card-inner cyan-card">
+          <span>03 / CREATIVE WEB</span>
+          <h3>DORAEMON<br>WORLD</h3>
+          <p>Interactive Fan Website</p>
+          <small>HTML · CSS · JAVASCRIPT</small>
+        </div>
+      </div>
+      
+<!-- 3D GITHUB PROJECT CAROUSEL -->
+
+<div class="awards-carousel" id="awardsCarousel">
+
+  <!-- 01 HAND FLOWER -->
+  <div class="awards-card" data-index="0">
+    <div class="awards-card-inner red-card">
+      <span>01 / CREATIVE PROJECT</span>
+      <h3>HAND<br>FLOWER.</h3>
+      <p>Creative Interaction</p>
+      <a href="https://github.com/panther20006/hand-flower"
+         target="_blank" rel="noopener noreferrer">
+        VIEW ON GITHUB ↗
+      </a>
+    </div>
+  </div>
+
+  <!-- 02 SHOPNOVA -->
+  <div class="awards-card" data-index="1">
+    <div class="awards-card-inner blue-card">
+      <span>02 / WEB PROJECT</span>
+      <h3>SHOP<br>NOVA.</h3>
+      <p>ShopNova</p>
+      <a href="https://github.com/panther20006/ShopNova"
+         target="_blank" rel="noopener noreferrer">
+        VIEW ON GITHUB ↗
+      </a>
+    </div>
+  </div>
+
+  <!-- 03 FROM MY HEART -->
+  <div class="awards-card" data-index="2">
+    <div class="awards-card-inner pink-card">
+      <span>03 / CREATIVE PROJECT</span>
+      <h3>FROM MY<br>HEART.</h3>
+      <p>Creative Web Experience</p>
+      <a href="https://github.com/panther20006/from-my-heart"
+         target="_blank" rel="noopener noreferrer">
+        VIEW ON GITHUB ↗
+      </a>
+    </div>
+  </div>
+
+  <!-- 04 NEON FRUIT SLASH -->
+  <div class="awards-card" data-index="3">
+    <div class="awards-card-inner orange-card">
+      <span>04 / INTERACTIVE PROJECT</span>
+      <h3>NEON FRUIT<br>SLASH.</h3>
+      <p>Interactive Web Project</p>
+      <a href="https://github.com/panther20006/neon-fruit-slash"
+         target="_blank" rel="noopener noreferrer">
+        VIEW ON GITHUB ↗
+      </a>
+    </div>
+  </div>
+
+  <!-- 05 SMART STUDY MONITOR -->
+  <div class="awards-card" data-index="4">
+    <div class="awards-card-inner purple-card">
+      <span>05 / STUDY PROJECT</span>
+      <h3>SMART STUDY<br>MONITOR.</h3>
+      <p>Study Monitoring Project</p>
+      <a href="https://github.com/panther20006/smart-study-monitor"
+         target="_blank" rel="noopener noreferrer">
+        VIEW ON GITHUB ↗
+      </a>
+    </div>
+  </div>
+
+  <!-- 06 MARKETLENS X -->
+  <div class="awards-card" data-index="5">
+    <div class="awards-card-inner cyan-card">
+      <span>06 / SOFTWARE PROJECT</span>
+      <h3>MARKETLENS<br>X.</h3>
+      <p>MarketLens X</p>
+      <a href="https://github.com/panther20006/MarketLens-X"
+         target="_blank" rel="noopener noreferrer">
+        VIEW ON GITHUB ↗
+      </a>
+    </div>
+  </div>
+
+</div>
+
+
+    </div>
+
+    <p class="awards-description">
+      Exploring new technologies and turning
+      creative ideas into real projects.
+    </p>
+
+  </div>
+
+  <!-- RIGHT CHARACTER -->
+  <div class="awards-visual">
+    <span class="awards-outline"
+          aria-hidden="true">06</span>
+
+    <img
+      src="assets/close-front.webp"
+      class="awards-person"
+      id="awardsPerson"
+      alt="Het Soni standing portrait"
+    >
+  </div>
+
+  <div class="scene-footer awards-bottom">
+    <span>KEEP CREATING ↓</span>
+    <span>06 / 06</span>
+  </div>
+  
+<!-- ==========================================
+     SLIDE 07 - FINAL CONTACT
+========================================== -->
+
+<section class="contact-slide scene" id="contact">
+
+  <div class="contact-top">
+    <span>(07) — CONTACT</span>
+    <span>AVAILABLE FOR COLLABORATION</span>
+  </div>
+
+  <!-- BIG BACKGROUND TEXT -->
+  <h2 class="contact-big-title">
+    LET'S
+  </h2>
+
+  <!-- CENTER CHARACTER -->
+  <div class="contact-character">
+    <img
+      src="assets/standing-side.webp"
+      class="contact-person contact-person-side"
+      id="contactPersonSide"
+      alt="Het Soni standing"
+    >
+
+  </div>
+
+  <!-- BOTTOM LEFT -->
+  <div class="contact-left">
+    <p>HAVE A PROJECT IN MIND?</p>
+
+    <h3>LET'S BUILD<br>SOMETHING.</h3>
+
+    <a
+    href="mailto:hetsoni1383@gmail.com"
+    class="contact-email"
+  >
+    hetsoni1383@gmail.com ↗
+  </a>
+  </div>
+
+  <!-- BOTTOM RIGHT -->
+  <div class="contact-right">
+    <a
+      href="https://github.com/panther20006"
+      target="_blank"
+      rel="noopener noreferrer">
+      GITHUB <span>↗</span>
+    </a>
+
+    <a href="#work">
+      PROJECTS <span>↗</span>
+    </a>
+
+    <a href="#home">
+      BACK TO TOP <span>↑</span>
+    </a>
+  </div>
+
+  <div class="contact-footer">
+    <span>© 2026 HET SONI</span>
+    <span>DESIGNED & BUILT WITH PASSION</span>
+    <span>07 / 07</span>
+  </div>
+
+</section>
+
+<!-- SLIDE 6 -> 7 TRANSITION -->
+<svg
+  id="contactTransitionSvg"
+  class="contact-transition-svg"
+  xmlns="http://www.w3.org/2000/svg"
+  preserveAspectRatio="none"
+  aria-hidden="true">
+  <path id="contactTransitionPath"></path>
+</svg>
+
+
+</section>
+
+
+
+
+      <!-- HOME -> ABOUT RED LINE -->
+      <svg class="scene-diagonal"
+           id="sceneDiagonal"
+           xmlns="http://www.w3.org/2000/svg"
+           preserveAspectRatio="none"
+           aria-hidden="true">
+        <path id="sceneDiagonalPath"></path>
+      </svg>
+
+      <!-- ABOUT -> PROJECTS RED LINE -->
+      <svg class="projects-transition-svg"
+           id="projectsTransitionSvg"
+           xmlns="http://www.w3.org/2000/svg"
+           preserveAspectRatio="none"
+           aria-hidden="true">
+        <path id="projectsTransitionPath"></path>
+      </svg>
+      <!-- PROJECTS -> JOURNEY RED LINE -->
+      <svg
+        class="journey-transition-svg"
+        id="journeyTransitionSvg"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+        aria-hidden="true">
+        <path id="journeyTransitionPath"></path>
+      </svg>
+      
+<!-- JOURNEY -> ORBIT TRANSITION -->
+
+      <svg
+        class="orbit-transition-svg"
+        id="orbitTransitionSvg"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+        aria-hidden="true">
+
+        <path id="orbitTransitionPath"></path>
+
+      </svg>
+      
+<!-- ORBIT TO AWARDS RED LINE -->
+
+<svg
+  class="awards-transition-svg"
+  id="awardsTransitionSvg"
+  xmlns="http://www.w3.org/2000/svg"
+  preserveAspectRatio="none"
+  aria-hidden="true">
+  <path id="awardsTransitionPath"></path>
+</svg>
+
+    </div>
+  </main>
+</body>
+</html>

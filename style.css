@@ -1,0 +1,3854 @@
+
+/* =========================================
+   HET SONI - COMPLETE STYLE.CSS
+========================================= */
+
+:root {
+  --bg: #f7f4ed;
+  --red: #ed1022;
+  --black: #17171b;
+  --gray: #66636a;
+  --pad: clamp(22px, 5vw, 75px);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--bg);
+  color: var(--black);
+  font-family: "DM Sans", sans-serif;
+}
+
+body.loading {
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  color: white;
+  background: var(--red);
+}
+
+/* =========================================
+   LOADER
+========================================= */
+
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.loader-panel {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: var(--red);
+}
+
+.loader-upper {
+  top: 0;
+}
+
+.loader-lower {
+  bottom: 0;
+}
+
+.loader-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px var(--pad);
+  color: white;
+}
+
+.loader-header,
+.loader-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.loader-number {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.loader-number strong {
+  font: clamp(130px, 28vw, 460px)/.9 "Anton", sans-serif;
+  letter-spacing: -.06em;
+}
+
+.loader-number small {
+  margin-top: 3vw;
+  font: clamp(28px, 4vw, 64px)/1 "Anton", sans-serif;
+}
+
+.split-line {
+  position: absolute;
+  top: calc(50% - 2px);
+  left: 0;
+  width: 100%;
+  height: 4px;
+  z-index: 3;
+  background: white;
+  transform: scaleX(0);
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  height: 76px;
+  padding: 0 var(--pad);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(247,244,237,.97);
+  border-bottom: 1px solid #0000000d;
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  font: 31px/1 "Anton", sans-serif;
+  white-space: nowrap;
+}
+
+.logo sup {
+  font: 9px "DM Sans", sans-serif;
+  vertical-align: top;
+}
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.desktop-nav a {
+  padding: 11px 15px;
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: 800;
+  transition: background .25s, color .25s;
+}
+
+.desktop-nav a.active,
+.desktop-nav a:hover {
+  background: var(--red);
+  color: white;
+}
+
+.nav-contact {
+  border: 1px solid var(--black);
+}
+
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  font-size: 27px;
+}
+
+/* =========================================
+   ORIGINAL PINNED SLIDES
+========================================= */
+
+.slides-stage {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  min-height: 650px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.scene {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--bg);
+}
+
+.hero {
+  z-index: 1;
+}
+
+.about-slide {
+  z-index: 2;
+  clip-path: inset(0 100% 0 0);
+}
+
+.projects-slide {
+  z-index: 3;
+  clip-path: inset(0 100% 0 0);
+}
+
+.scene-top,
+.scene-footer {
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.scene-top {
+  top: 100px;
+}
+
+.scene-footer {
+  bottom: 22px;
+}
+
+/* =========================================
+   HOME
+========================================= */
+
+.hero-background-name {
+  position: absolute;
+  top: clamp(105px, 16vh, 180px);
+  right: clamp(16px, 5vw, 90px);
+  z-index: 1;
+  max-width: 90vw;
+  font: clamp(90px, 12.4vw, 205px)/.9 "Anton", sans-serif;
+  letter-spacing: -.055em;
+  white-space: nowrap;
+  color: var(--red);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: absolute;
+  top: 53%;
+  left: var(--pad);
+  width: min(55%, 780px);
+  z-index: 15;
+  transform: translateY(-50%);
+}
+
+.intro-text {
+  margin: 0 0 18px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.hero-content h1 {
+  margin: 0;
+  font: clamp(50px, 6.9vw, 116px)/.98 "Anton", sans-serif;
+  letter-spacing: -.035em;
+}
+
+.hero-content h1 span {
+  display: block;
+  white-space: nowrap;
+}
+
+.red-text {
+  color: var(--red);
+}
+
+.hero-description {
+  max-width: 390px;
+  margin: 23px 0;
+  font-size: clamp(13px, 1.2vw, 17px);
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn {
+  display: inline-flex;
+  padding: 14px 21px;
+  border-radius: 40px;
+  font-size: 11px;
+  font-weight: 800;
+  transition: transform .25s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn-red {
+  color: white;
+  background: var(--red);
+}
+
+.btn-outline {
+  border: 1px solid var(--black);
+}
+
+.hero-person {
+  position: absolute;
+  right: clamp(8px, 3vw, 68px);
+  bottom: 0;
+  width: min(43vw, 590px);
+  height: min(77%, 780px);
+  z-index: 8;
+  overflow: hidden;
+}
+
+.face-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+#faceFront {
+  opacity: 1;
+  visibility: visible;
+}
+
+#faceLeft {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.hero-footer {
+  bottom: clamp(16px, 3vh, 32px);
+}
+
+/* =========================================
+   ABOUT
+========================================= */
+
+.about-glow {
+  position: absolute;
+  top: 17%;
+  left: -8%;
+  width: 57%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    #f4c8c0,
+    #f8e0d9 38%,
+    transparent 74%
+  );
+}
+
+.about-visual {
+  position: absolute;
+  top: 13%;
+  left: 2%;
+  width: 49%;
+  height: 87%;
+  z-index: 5;
+}
+
+.about-outline {
+  position: absolute;
+  top: 24%;
+  left: 3%;
+  font: clamp(180px, 23vw, 370px)/1 "Anton", sans-serif;
+  color: transparent;
+  -webkit-text-stroke: 2px #e6b9b1;
+}
+
+.about-person {
+  position: absolute;
+  bottom: 0;
+  left: 6%;
+  width: 86%;
+  height: 94%;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.about-image-caption {
+  position: absolute;
+  left: 4%;
+  bottom: 3%;
+  z-index: 6;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.about-information {
+  position: absolute;
+  top: 50%;
+  right: 6%;
+  width: 40%;
+  z-index: 12;
+  transform: translateY(-50%);
+}
+
+.about-small {
+  margin: 0 0 20px;
+  color: var(--red);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.about-heading {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  font: clamp(60px, 6.8vw, 112px)/.98 "Anton", sans-serif;
+  letter-spacing: -.035em;
+}
+
+.about-word {
+  display: block;
+  white-space: nowrap;
+}
+
+.red-word {
+  color: var(--red);
+}
+
+.about-paragraph {
+  margin: 24px 0;
+  max-width: 470px;
+  color: var(--gray);
+  font-size: clamp(13px, 1.12vw, 17px);
+  line-height: 1.7;
+}
+
+.about-facts {
+  display: flex;
+  gap: 12px;
+}
+
+.about-fact {
+  flex: 1;
+  min-width: 0;
+  padding: 16px 12px;
+  border: 1px solid #e7ddd3;
+  border-radius: 12px;
+  background: white;
+}
+
+.about-fact strong {
+  display: block;
+  margin-bottom: 10px;
+  font: 40px/1 "Anton", sans-serif;
+  color: var(--red);
+}
+
+.about-fact span {
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+/* =========================================
+   PROJECTS - CLIP STYLE
+========================================= */
+
+.projects-slide {
+  background: var(--bg);
+}
+
+.projects-background-number {
+  position: absolute;
+  top: 26%;
+  right: 4%;
+  z-index: 0;
+  font: clamp(190px, 28vw, 450px)/1 "Anton", sans-serif;
+  letter-spacing: -.06em;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(237,16,34,.30);
+  pointer-events: none;
+}
+
+/* LEFT SIDE PROJECT CONTENT */
+
+.projects-content {
+  position: absolute;
+  top: 53%;
+  left: 5%;
+  width: 44%;
+  height: min(660px, 73%);
+  z-index: 12;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+
+.projects-intro {
+  flex: none;
+  margin-bottom: 15px;
+}
+
+.projects-intro p {
+  margin: 0 0 6px;
+  color: var(--red);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.projects-intro h2 {
+  margin: 0;
+  font: clamp(27px, 3.2vw, 50px)/1.05 "Anton", sans-serif;
+}
+
+.projects-intro h2 em {
+  color: var(--red);
+  font-style: normal;
+}
+
+/* PROJECT STACK */
+
+.project-stack {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 15px;
+}
+
+.project-panel {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  will-change: transform;
+}
+
+.project-panel-1 { z-index: 3; }
+.project-panel-2 { z-index: 2; }
+.project-panel-3 { z-index: 1; }
+
+.project-panel-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 7px 3px 0;
+}
+
+.project-number {
+  margin-bottom: 7px;
+  color: var(--red);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.project-heading {
+  margin: 0;
+  font: clamp(38px, 4.5vw, 71px)/1 "Anton", sans-serif;
+  letter-spacing: -.025em;
+  overflow-wrap: anywhere;
+}
+
+.project-heading span {
+  color: var(--red);
+}
+
+.project-description {
+  margin: 10px 0;
+  max-width: 440px;
+  color: #5b5960;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.project-tags span {
+  padding: 7px 10px;
+  border: 1px solid #d8cdc3;
+  border-radius: 30px;
+  background: #ffffffb8;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.project-link {
+  align-self: flex-start;
+  margin-bottom: 12px;
+  padding-bottom: 5px;
+  color: var(--red);
+  border-bottom: 2px solid var(--red);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* THREE PROJECT BANNERS */
+
+.project-preview {
+  position: relative;
+  flex: 1;
+  min-height: 105px;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 12px 30px #00000015;
+}
+
+.project-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: filter .3s ease;
+}
+
+.project-preview:hover img {
+  filter: brightness(1.08);
+}
+
+/* RIGHT LAPTOP CHARACTER */
+
+.projects-visual {
+  position: absolute;
+  right: -1%;
+  bottom: 0;
+  width: 49%;
+  height: 81%;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.projects-person {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  filter: drop-shadow(0 18px 24px #00000015);
+}
+
+/* PROGRESS */
+
+.projects-progress {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 4px 0;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.progress-track {
+  flex: 1;
+  height: 3px;
+  background: #e2d7ce;
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 33.333%;
+  height: 100%;
+  background: var(--red);
+  transform-origin: left;
+}
+
+/* =========================================
+   RED DIAGONAL LINES
+========================================= */
+
+.scene-diagonal,
+.projects-transition-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.scene-diagonal {
+  z-index: 4;
+}
+
+.projects-transition-svg {
+  z-index: 5;
+}
+
+#sceneDiagonalPath,
+#projectsTransitionPath {
+  fill: none;
+  stroke: var(--red);
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (min-width: 701px) and (max-width: 1100px) {
+  .hero-content {
+    left: 5%;
+    width: 56%;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(48px, 6.35vw, 74px);
+  }
+
+  .hero-person {
+    right: 0;
+    width: 45%;
+    height: 73%;
+  }
+
+  .about-information {
+    right: 4%;
+    width: 46%;
+  }
+
+  .about-heading {
+    font-size: 6.4vw;
+  }
+
+  .projects-content {
+    left: 4%;
+    width: 49%;
+  }
+
+  .projects-visual {
+    right: -3%;
+    width: 47%;
+  }
+
+  .project-heading {
+    font-size: 5vw;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+  .header {
+    height: 64px;
+    padding: 0 5%;
+  }
+
+  .logo {
+    font-size: 25px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .desktop-nav {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    padding: 16px 5%;
+    flex-direction: column;
+    align-items: stretch;
+    background: var(--bg);
+    box-shadow: 0 15px 35px #0002;
+  }
+
+  .desktop-nav.open {
+    display: flex;
+  }
+
+  .slides-stage {
+    min-height: 0;
+    height: 100svh;
+  }
+
+  .scene-top {
+    top: 86px;
+    font-size: 8px;
+  }
+
+  .scene-footer {
+    bottom: 15px;
+    font-size: 8px;
+  }
+
+  /* HOME */
+
+  .hero-content {
+    top: clamp(100px, 15.5svh, 138px);
+    left: 5%;
+    right: 5%;
+    width: 90%;
+    transform: none;
+  }
+
+  .intro-text {
+    margin-bottom: 10px;
+    font-size: 10px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(38px, 10.5vw, 72px);
+    line-height: 1.01;
+  }
+
+  .hero-description {
+    max-width: min(85%, 340px);
+    margin: 12px 0 14px;
+    font-size: clamp(11px, 2.9vw, 13px);
+    line-height: 1.5;
+  }
+
+  .hero-actions {
+    gap: 9px;
+  }
+
+  .btn {
+    padding: 11px 13px;
+    font-size: 10px;
+  }
+
+  .hero-background-name {
+    top: 51%;
+    left: 4%;
+    right: auto;
+    max-width: 92%;
+    font-size: 15.1vw;
+  }
+
+  .hero-person {
+    right: -4%;
+    bottom: 0;
+    width: 84%;
+    height: 47%;
+  }
+
+  /* ABOUT */
+
+  .about-visual {
+    top: 8%;
+    left: 0;
+    width: 100%;
+    height: 46%;
+  }
+
+  .about-outline {
+    top: 16%;
+    left: 8%;
+    font-size: 48vw;
+  }
+
+  .about-person {
+    left: 11%;
+    width: 78%;
+    height: 96%;
+  }
+
+  .about-information {
+    top: 57%;
+    left: 5%;
+    right: 5%;
+    width: 90%;
+    transform: none;
+  }
+
+  .about-small {
+    margin-bottom: 8px;
+    font-size: 9px;
+  }
+
+  .about-heading {
+    font-size: clamp(42px, 10vw, 72px);
+  }
+
+  .about-paragraph {
+    margin: 10px 0;
+    font-size: 11px;
+    line-height: 1.45;
+  }
+
+  .about-facts {
+    gap: 6px;
+  }
+
+  .about-fact {
+    padding: 9px 7px;
+  }
+
+  .about-fact strong {
+    font-size: 25px;
+  }
+
+  .about-fact span {
+    font-size: 7px;
+  }
+
+  .about-image-caption {
+    font-size: 7px;
+  }
+
+  /* PROJECTS - LEFT PROJECT TOP, RIGHT LAPTOP */
+
+  .projects-background-number {
+    top: 48%;
+    right: 0;
+    font-size: 60vw;
+  }
+
+  .projects-content {
+    top: 17%;
+    left: 5%;
+    right: 5%;
+    width: 90%;
+    height: 51%;
+    transform: none;
+  }
+
+  .projects-intro {
+    margin-bottom: 10px;
+  }
+
+  .projects-intro h2 {
+    font-size: clamp(25px, 7.5vw, 36px);
+  }
+
+  .projects-intro p {
+    font-size: 8px;
+  }
+
+  .project-stack {
+    border-radius: 10px;
+  }
+
+  .project-panel-content {
+    padding: 4px 2px 0;
+  }
+
+  .project-heading {
+    font-size: clamp(29px, 8vw, 46px);
+  }
+
+  .project-number {
+    font-size: 8px;
+    margin-bottom: 5px;
+  }
+
+  .project-description {
+    margin: 6px 0;
+    font-size: 10px;
+    line-height: 1.4;
+  }
+
+  .project-tags {
+    gap: 5px;
+    margin-bottom: 6px;
+  }
+
+  .project-tags span {
+    padding: 5px 7px;
+    font-size: 7px;
+  }
+
+  .project-link {
+    margin-bottom: 8px;
+    font-size: 9px;
+  }
+
+  .project-preview {
+    min-height: 80px;
+    border-radius: 10px;
+  }
+
+  .projects-progress {
+    padding-top: 9px;
+  }
+
+  .projects-visual {
+    right: -8%;
+    left: auto;
+    bottom: 0;
+    width: 69%;
+    height: 32%;
+    opacity: .95;
+  }
+
+  .loader-number strong {
+    font-size: 37vw;
+  }
+
+  .loader-header,
+  .loader-footer {
+    font-size: 8px;
+  }
+}
+
+/* =========================================
+   SHORT SCREENS
+========================================= */
+
+@media (min-width: 701px) and (max-height: 750px) {
+  .projects-content {
+    top: 54%;
+    height: 72%;
+  }
+
+  .project-heading {
+    font-size: clamp(32px, 4vw, 58px);
+  }
+
+  .project-description {
+    margin: 6px 0;
+  }
+
+  .project-preview {
+    min-height: 75px;
+  }
+
+  .about-heading {
+    font-size: clamp(48px, 6vw, 88px);
+  }
+}
+
+@media (max-width: 700px) and (max-height: 720px) {
+  .hero-content {
+    top: 86px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(34px, 9.5vw, 56px);
+  }
+
+  .hero-person {
+    height: 43%;
+  }
+
+  .projects-content {
+    top: 15%;
+    height: 55%;
+  }
+
+  .projects-visual {
+    height: 29%;
+  }
+
+  .project-description {
+    margin: 4px 0;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+/* =========================================
+   SLIDE 04 - JOURNEY
+========================================= */
+
+.journey-slide {
+  z-index: 4;
+  clip-path: inset(0 100% 0 0);
+  background: var(--bg);
+}
+
+.journey-background-year {
+  position: absolute;
+  left: 3%;
+  top: 20%;
+  z-index: 0;
+  font: clamp(180px, 25vw, 420px)/1 "Anton", sans-serif;
+  letter-spacing: -.06em;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(237, 16, 34, .28);
+  pointer-events: none;
+}
+
+.journey-top {
+  z-index: 15;
+}
+
+.journey-visual {
+  position: absolute;
+  left: 4%;
+  bottom: 0;
+  width: 38%;
+  height: 78%;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.journey-person {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.journey-content {
+  position: absolute;
+  right: 6%;
+  top: 50%;
+  width: 43%;
+  height: 68%;
+  z-index: 12;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+}
+
+.journey-kicker {
+  margin: 0 0 8px;
+  color: var(--red);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+}
+
+.journey-heading {
+  margin: 0 0 22px;
+  font: clamp(42px, 5vw, 80px)/.95 "Anton", sans-serif;
+  letter-spacing: -.03em;
+}
+
+.journey-heading span {
+  color: var(--red);
+}
+
+.journey-timeline {
+  position: relative;
+  padding-left: 28px;
+}
+
+.journey-timeline::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 7px;
+  width: 2px;
+  height: calc(100% - 12px);
+  background: #efc8ce;
+}
+
+.journey-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+  opacity: .28;
+  transform: translateY(26px);
+  transition: opacity .25s ease;
+}
+
+.journey-item:last-child {
+  margin-bottom: 0;
+}
+
+.journey-item.active {
+  opacity: 1;
+}
+
+.journey-dot {
+  position: absolute;
+  left: -28px;
+  top: 5px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--red);
+  border-radius: 50%;
+  background: var(--bg);
+}
+
+.journey-item.active .journey-dot {
+  background: var(--red);
+}
+
+.journey-item-body small {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--red);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.journey-item-body h3 {
+  margin: 0 0 6px;
+  font: clamp(20px, 2.1vw, 32px)/1 "Anton", sans-serif;
+  letter-spacing: -.02em;
+}
+
+.journey-item-body p {
+  margin: 0;
+  max-width: 420px;
+  color: var(--gray);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.journey-bottom {
+  z-index: 15;
+}
+
+.journey-transition-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 6;
+}
+
+#journeyTransitionPath {
+  fill: none;
+  stroke: var(--red);
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+@media (min-width: 701px) and (max-width: 1100px) {
+  .journey-visual {
+    width: 40%;
+    left: 1%;
+  }
+
+  .journey-content {
+    width: 48%;
+    right: 4%;
+  }
+
+  .journey-heading {
+    font-size: clamp(38px, 5vw, 60px);
+  }
+}
+
+/* =========================================
+   SLIDE 4 FINAL LAYER FIX
+========================================= */
+
+.journey-slide {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  clip-path: inset(0 100% 0 0);
+  isolation: isolate;
+}
+
+.journey-background-year {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* Character stays on left */
+.journey-visual {
+  z-index: 5;
+}
+
+/* Timeline stays on right */
+.journey-content {
+  z-index: 12;
+}
+
+/* Red transition above slides */
+.journey-transition-svg {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Earlier SVGs must remain above their
+   destination scene to show the red line */
+.scene-diagonal {
+  z-index: 5;
+}
+
+.projects-transition-svg {
+  z-index: 6;
+}
+
+#journeyTransitionPath {
+  fill: none;
+  stroke: var(--red);
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+/* Year changes without layout shift */
+#journeyBackgroundYear {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ==========================================
+   SLIDE 05 - VIDEO STYLE ORBIT
+========================================== */
+
+.orbit-slide {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #f7f4ed;
+  clip-path: inset(0 100% 0 0);
+  isolation: isolate;
+}
+
+.orbit-top {
+  z-index: 30;
+}
+
+/* ==========================================
+   LEFT SIDE HEADING
+========================================== */
+
+.orbit-content {
+  position: absolute;
+  z-index: 12;
+  top: 34%;
+  left: 5%;
+  width: 35%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.orbit-kicker {
+  margin: 0 0 15px;
+  color: #ed1022;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.orbit-heading {
+  margin: 0;
+  font-family: "Anton", Impact, sans-serif;
+  font-size: clamp(54px, 6.5vw, 105px);
+  font-weight: 400;
+  line-height: .95;
+  letter-spacing: -.045em;
+  color: #17171b;
+}
+
+.orbit-heading span {
+  display: block;
+  white-space: nowrap;
+}
+
+.orbit-heading em {
+  color: #ed1022;
+  font-style: normal;
+}
+
+.orbit-description {
+  max-width: 270px;
+  margin: 16px 0 0;
+  color: #66636a;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+/* ==========================================
+   CENTER UNIVERSE
+========================================== */
+
+.orbit-universe {
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  left: 53%;
+  width: min(72vw, 1020px);
+  height: min(83vh, 750px);
+  transform: translate(-50%, -50%);
+  isolation: isolate;
+  pointer-events: none;
+}
+
+/* SOFT RED GLOW */
+
+.orbit-glow {
+  position: absolute;
+  z-index: 0;
+  top: 15%;
+  left: 21%;
+  width: 58%;
+  height: 68%;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse,
+    rgba(237,16,34,.11) 0%,
+    rgba(237,16,34,.04) 45%,
+    transparent 73%
+  );
+}
+
+/* ==========================================
+   CENTER CHARACTER
+========================================== */
+
+.orbit-character {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  bottom: 0;
+  width: 42%;
+  height: 90%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.orbit-character img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  transform-origin: center bottom;
+  filter: drop-shadow(
+    0 16px 22px rgba(0,0,0,.1)
+  );
+}
+
+/* ==========================================
+   RED ROUND SKILL LABELS
+========================================== */
+
+.orbit-floating {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 15px;
+  border-radius: 100px;
+  border: 1px solid rgba(255,255,255,.28);
+  background: #ed1022;
+  color: white;
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .3px;
+  white-space: nowrap;
+  box-shadow:
+    0 7px 18px rgba(237,16,34,.2);
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+.orbit-floating:nth-of-type(3n) {
+  background: #c80d22;
+}
+
+.orbit-floating:nth-of-type(4n) {
+  background: #f13a4c;
+}
+
+/* ==========================================
+   RED MOVING STRIP
+========================================== */
+
+.orbit-marquee {
+  position: absolute;
+  z-index: 20;
+  left: -5%;
+  bottom: 2%;
+  width: 110%;
+  height: 52px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background: #ed1022;
+  color: white;
+  transform: rotate(-8deg);
+  transform-origin: center;
+  box-shadow: 0 8px 20px rgba(237,16,34,.16);
+  pointer-events: none;
+}
+
+.orbit-marquee-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  white-space: nowrap;
+  animation: orbitMarquee 18s linear infinite;
+}
+
+.orbit-marquee-track span {
+  flex-shrink: 0;
+  padding-right: 35px;
+  font-family: "Anton", sans-serif;
+  font-size: 21px;
+  letter-spacing: 1.5px;
+}
+
+@keyframes orbitMarquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.orbit-bottom {
+  z-index: 25;
+  bottom: 15px;
+}
+
+/* ==========================================
+   JOURNEY TO ORBIT TRANSITION
+========================================== */
+
+.orbit-transition-svg {
+  position: absolute;
+  inset: 0;
+  z-index: 7;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+#orbitTransitionPath {
+  fill: none;
+  stroke: #ed1022;
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (min-width: 701px) and (max-width: 1100px) {
+
+  .orbit-content {
+    top: 35%;
+    left: 5%;
+    width: 39%;
+  }
+
+  .orbit-heading {
+    font-size: clamp(46px, 6vw, 72px);
+  }
+
+  .orbit-universe {
+    left: 54%;
+    width: 78vw;
+    height: 73vh;
+  }
+
+  .orbit-character {
+    width: 44%;
+  }
+
+  .orbit-floating {
+    padding: 7px 11px;
+    font-size: 9px;
+  }
+
+  .orbit-marquee {
+    bottom: 12%;
+    height: 44px;
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 700px) {
+
+  .orbit-content {
+    top: 16%;
+    left: 5%;
+    width: 90%;
+    transform: none;
+  }
+
+  .orbit-kicker {
+    margin-bottom: 8px;
+    font-size: 8px;
+  }
+
+  .orbit-heading {
+    font-size: clamp(42px, 11vw, 65px);
+    line-height: .98;
+  }
+
+  .orbit-description {
+    max-width: 250px;
+    margin-top: 9px;
+    font-size: 10px;
+  }
+
+  .orbit-universe {
+    top: 59%;
+    left: 50%;
+    width: 100vw;
+    height: 54vh;
+    transform: translate(-50%, -50%);
+  }
+
+  .orbit-character {
+    width: 55%;
+    height: 87%;
+  }
+
+  .orbit-floating {
+    padding: 6px 9px;
+    font-size: 7px;
+    box-shadow: 0 4px 10px rgba(237,16,34,.18);
+  }
+
+  .orbit-marquee {
+    left: -10%;
+    width: 120%;
+    bottom: 7%;
+    height: 35px;
+    transform: rotate(-8deg);
+  }
+
+  .orbit-marquee-track span {
+    font-size: 15px;
+  }
+
+  .orbit-bottom {
+    bottom: 12px;
+    font-size: 8px;
+  }
+}
+
+/* ==========================================
+   SHORT MOBILE
+========================================== */
+
+@media (max-width: 700px) and (max-height: 700px) {
+
+  .orbit-content {
+    top: 13%;
+  }
+
+  .orbit-heading {
+    font-size: clamp(36px, 9vw, 54px);
+  }
+
+  .orbit-universe {
+    top: 61%;
+    height: 49vh;
+  }
+
+  .orbit-character {
+    height: 88%;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .orbit-marquee-track {
+    animation: none;
+  }
+
+  .orbit-floating {
+    will-change: auto;
+  }
+}
+/* STRAIGHT BOTTOM RED STRIPE */
+
+.orbit-marquee {
+  left: 0 !important;
+  width: 100% !important;
+  bottom: 35px !important;
+  height: 45px !important;
+  transform: none !important;
+  rotate: 0deg !important;
+}
+
+@media (max-width: 700px) {
+  .orbit-marquee {
+    bottom: 28px !important;
+    height: 34px !important;
+  }
+}
+
+/* ==========================================
+   SLIDE 06 - PROOF OF WORK
+========================================== */
+
+.awards-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 6;
+  overflow: hidden;
+  background: var(--bg);
+  clip-path: inset(0 100% 0 0);
+  isolation: isolate;
+}
+
+.awards-top {
+  z-index: 20;
+}
+
+.awards-content {
+  position: absolute;
+  z-index: 10;
+  top: 53%;
+  left: 5%;
+  width: 49%;
+  height: 72%;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
+
+.awards-kicker {
+  margin: 0 0 8px;
+  color: var(--red);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.awards-heading {
+  margin: 0 0 20px;
+  font: clamp(42px, 5vw, 78px)/.97 "Anton", sans-serif;
+  letter-spacing: -.03em;
+}
+
+.awards-heading em {
+  color: var(--red);
+  font-style: normal;
+}
+
+/* STATS */
+
+.awards-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 9px;
+}
+
+.awards-stat {
+  min-width: 0;
+  padding: 16px 12px;
+  border: 1px solid #e4d7cf;
+  border-radius: 12px;
+  background: white;
+}
+
+.awards-stat-red {
+  color: white;
+  border-color: var(--red);
+  background: var(--red);
+}
+
+.awards-stat strong {
+  display: block;
+  margin-bottom: 6px;
+  font: clamp(34px, 4vw, 61px)/1 "Anton", sans-serif;
+}
+
+.awards-stat span {
+  display: block;
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: .4px;
+}
+
+.awards-carousel-title {
+  display: flex;
+  justify-content: space-between;
+  margin: 24px 4px 10px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* 3D CAROUSEL */
+
+.awards-carousel {
+  position: relative;
+  flex: 1;
+  min-height: 170px;
+  perspective: 900px;
+  transform-style: preserve-3d;
+}
+
+.awards-card {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 47%;
+  height: 100%;
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+}
+
+.awards-card-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding: 19px;
+  border-radius: 16px;
+  overflow: hidden;
+  color: white;
+  box-shadow: 0 15px 30px #0000001c;
+}
+
+.awards-card-inner > span,
+.awards-card-inner small {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .7px;
+}
+
+.awards-card-inner h3 {
+  margin: auto 0 8px;
+  font: clamp(27px, 3vw, 44px)/.95 "Anton", sans-serif;
+}
+
+.awards-card-inner p {
+  margin: 0 0 8px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.red-card {
+  background: linear-gradient(135deg, #e71028, #8b0017);
+}
+
+.blue-card {
+  background: linear-gradient(135deg, #008f9a, #003f62);
+}
+
+.cyan-card {
+  background: linear-gradient(135deg, #1688ed, #053dbe);
+}
+
+.awards-description {
+  margin: 14px 0 0;
+  color: var(--gray);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* RIGHT CHARACTER */
+
+.awards-visual {
+  position: absolute;
+  z-index: 5;
+  right: 0;
+  bottom: 0;
+  width: 45%;
+  height: 83%;
+  pointer-events: none;
+}
+
+.awards-outline {
+  position: absolute;
+  top: 13%;
+  right: 7%;
+  z-index: 0;
+  font: clamp(200px, 29vw, 440px)/1 "Anton", sans-serif;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(237,16,34,.25);
+}
+
+.awards-person {
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  right: 3%;
+  width: 95%;
+  height: 96%;
+  object-fit: contain;
+  object-position: center bottom;
+  filter: drop-shadow(0 16px 25px #00000016);
+}
+
+.awards-bottom {
+  z-index: 20;
+}
+
+.awards-transition-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 8;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+#awardsTransitionPath {
+  fill: none;
+  stroke: var(--red);
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+/* TABLET */
+
+@media (min-width: 701px) and (max-width: 1100px) {
+  .awards-content {
+    width: 53%;
+    left: 4%;
+  }
+
+  .awards-visual {
+    width: 43%;
+    right: -2%;
+  }
+
+  .awards-heading {
+    font-size: clamp(38px, 4.5vw, 60px);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .awards-content {
+    top: 17%;
+    left: 5%;
+    width: 90%;
+    height: 55%;
+    transform: none;
+  }
+
+  .awards-kicker {
+    font-size: 8px;
+  }
+
+  .awards-heading {
+    margin-bottom: 12px;
+    font-size: clamp(33px, 9vw, 53px);
+  }
+
+  .awards-stats {
+    gap: 5px;
+  }
+
+  .awards-stat {
+    padding: 10px 7px;
+    border-radius: 9px;
+  }
+
+  .awards-stat strong {
+    font-size: 28px;
+  }
+
+  .awards-stat span {
+    font-size: 7px;
+  }
+
+  .awards-carousel-title {
+    margin: 14px 0 9px;
+    font-size: 8px;
+  }
+
+  .awards-carousel {
+    min-height: 135px;
+  }
+
+  .awards-card {
+    width: 52%;
+  }
+
+  .awards-card-inner {
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  .awards-card-inner h3 {
+    font-size: 24px;
+  }
+
+  .awards-card-inner > span,
+  .awards-card-inner small,
+  .awards-card-inner p {
+    font-size: 7px;
+  }
+
+  .awards-description {
+    margin-top: 8px;
+    font-size: 10px;
+  }
+
+  .awards-visual {
+    right: -8%;
+    width: 65%;
+    height: 32%;
+  }
+
+  .awards-outline {
+    font-size: 48vw;
+  }
+}
+
+@media (max-width: 700px) and (max-height: 700px) {
+  .awards-content {
+    top: 14%;
+    height: 57%;
+  }
+
+  .awards-heading {
+    font-size: 34px;
+  }
+
+  .awards-carousel {
+    min-height: 110px;
+  }
+
+  .awards-visual {
+    height: 28%;
+  }
+}
+
+/* SLIDE 6 LAYER FIX */
+
+.awards-slide {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  clip-path: inset(0 100% 0 0);
+  isolation: isolate;
+}
+
+.awards-transition-svg {
+  position: absolute;
+  inset: 0;
+  z-index: 8;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+#awardsTransitionPath {
+  fill: none;
+  stroke: var(--red);
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+/* Keep original straight Orbit stripe */
+.orbit-marquee {
+  left: 0 !important;
+  width: 100% !important;
+  bottom: 35px !important;
+  transform: none !important;
+  rotate: 0deg !important;
+}
+
+/* ==========================================
+   SIX PROJECTS - 3D CAROUSEL
+========================================== */
+
+.awards-carousel {
+  position: relative;
+  perspective: 1100px;
+  transform-style: preserve-3d;
+  overflow: visible;
+}
+
+.awards-card {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 47%;
+  height: 100%;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+.awards-card-inner {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 19px;
+  border-radius: 16px;
+}
+
+.awards-card-inner h3 {
+  margin: auto 0 8px;
+  overflow-wrap: anywhere;
+}
+
+.awards-card-inner a {
+  display: inline-block;
+  align-self: flex-start;
+  margin-top: 10px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(255,255,255,.8);
+  color: white;
+  font-size: 9px;
+  font-weight: 800;
+  text-decoration: none;
+  letter-spacing: .5px;
+  pointer-events: auto;
+}
+
+/* ADDITIONAL PROJECT THEMES */
+
+.pink-card {
+  background: linear-gradient(135deg, #ff527d, #ad174c);
+}
+
+.orange-card {
+  background: linear-gradient(135deg, #ff8c22, #d32622);
+}
+
+.purple-card {
+  background: linear-gradient(135deg, #7957e8, #35207c);
+}
+
+/* TABLET */
+
+@media (min-width: 701px) and (max-width: 1100px) {
+  .awards-card {
+    width: 51%;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .awards-card {
+    width: 57%;
+  }
+
+  .awards-card-inner {
+    padding: 12px;
+  }
+
+  .awards-card-inner h3 {
+    font-size: clamp(19px, 5vw, 26px);
+  }
+
+  .awards-card-inner a {
+    margin-top: 6px;
+    font-size: 7px;
+  }
+}
+
+/* ==========================================
+   SLIDE 6 - AUTO ROTATING 3D CAROUSEL
+========================================== */
+
+.awards-carousel {
+  position: relative;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  overflow: visible;
+  isolation: isolate;
+}
+
+.awards-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 43%;
+  height: 91%;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+.awards-card-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  box-shadow: 0 12px 30px #00000022;
+}
+
+.awards-card a {
+  position: relative;
+  z-index: 5;
+}
+
+@media (max-width: 700px) {
+  .awards-card {
+    width: 55%;
+    height: 94%;
+  }
+}
+
+/* AUTO ROTATING 3D PROJECT CAROUSEL */
+
+.awards-carousel {
+  position: relative;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  overflow: visible;
+}
+
+.awards-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 43%;
+  height: 91%;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+.awards-card-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  box-shadow: 0 12px 30px #00000022;
+}
+
+@media (max-width: 700px) {
+  .awards-card {
+    width: 55%;
+    height: 94%;
+  }
+}
+
+
+/* ==========================================
+   SLIDE 6 - 3D CYLINDER CAROUSEL
+========================================== */
+
+.awards-carousel {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  min-height: 200px;
+  overflow: visible;
+  perspective: 1300px;
+  perspective-origin: 50% 50%;
+  transform-style: preserve-3d;
+  isolation: isolate;
+}
+
+.awards-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 36%;
+  height: 87%;
+  margin: 0;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+  transform-origin: center center;
+}
+
+.awards-card-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 18px;
+  border-radius: 13px;
+  color: #fff;
+  overflow: hidden;
+  backface-visibility: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,.13);
+}
+
+.awards-card-inner h3 {
+  margin: auto 0 8px;
+  font: clamp(24px, 2.6vw, 39px)/1 "Anton", sans-serif;
+}
+
+.awards-card-inner a {
+  position: relative;
+  z-index: 5;
+  color: #fff;
+  text-decoration: none;
+  font-size: 9px;
+  font-weight: 800;
+  pointer-events: auto;
+}
+
+@media (max-width: 700px) {
+  .awards-carousel {
+    min-height: 140px;
+    perspective: 850px;
+  }
+
+  .awards-card {
+    width: 55%;
+    height: 90%;
+  }
+
+  .awards-card-inner {
+    padding: 12px;
+  }
+
+  .awards-card-inner h3 {
+    font-size: 23px;
+  }
+}
+
+.awards-carousel {
+  position: relative;
+  perspective: 1300px;
+  transform-style: preserve-3d;
+  overflow: visible;
+}
+
+.awards-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 36%;
+  height: 87%;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+/* ==========================================
+   SLIDE 07 - FINAL CONTACT
+========================================== */
+
+.contact-slide {
+  position: absolute;
+  inset: 0;
+  z-index: 7;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #ed1022;
+  color: white;
+  clip-path: inset(0 100% 0 0);
+  isolation: isolate;
+}
+
+.contact-top {
+  position: absolute;
+  z-index: 10;
+  top: 15%;
+  left: 5%;
+  right: 5%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.contact-big-title {
+  position: absolute;
+  z-index: 1;
+  top: 6%;
+  left: 50%;
+  margin: 0;
+  transform: translateX(-50%);
+  font: clamp(170px, 29vw, 540px)/1 "Anton", sans-serif;
+  letter-spacing: -0.065em;
+  color: white;
+  white-space: nowrap;
+}
+
+.contact-character {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: 0;
+  width: min(42vw, 620px);
+  height: 82%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.contact-person {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  filter: drop-shadow(0 12px 18px #00000020);
+}
+
+.contact-person-front {
+  opacity: 0;
+}
+
+.contact-left {
+  position: absolute;
+  z-index: 5;
+  bottom: 13%;
+  left: 5%;
+  max-width: 35%;
+}
+
+.contact-left p {
+  margin: 0 0 12px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.contact-left h3 {
+  margin: 0 0 18px;
+  font: clamp(38px, 5vw, 78px)/0.98 "Anton", sans-serif;
+}
+
+.contact-left a {
+  color: white;
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  border-bottom: 1px solid white;
+  padding-bottom: 6px;
+}
+
+.contact-right {
+  position: absolute;
+  z-index: 5;
+  right: 5%;
+  bottom: 16%;
+  width: 18%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-right a {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid #ffffff90;
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .6px;
+}
+
+.contact-right a:hover {
+  opacity: .7;
+}
+
+.contact-footer {
+  position: absolute;
+  z-index: 10;
+  left: 5%;
+  right: 5%;
+  bottom: 4%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.contact-transition-svg {
+  position: absolute;
+  inset: 0;
+  z-index: 9;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+#contactTransitionPath {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 4;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .contact-top {
+    top: 12%;
+    font-size: 8px;
+    gap: 10px;
+  }
+
+  .contact-big-title {
+    top: 22%;
+    font-size: 38vw;
+  }
+
+  .contact-character {
+    width: 95%;
+    height: 62%;
+  }
+
+  .contact-left {
+    bottom: 16%;
+    max-width: 60%;
+  }
+
+  .contact-left h3 {
+    font-size: 32px;
+  }
+
+  .contact-left p,
+  .contact-left a {
+    font-size: 9px;
+  }
+
+  .contact-right {
+    bottom: 16%;
+    width: 29%;
+  }
+
+  .contact-right a {
+    font-size: 8px;
+    padding: 10px 0;
+  }
+
+  .contact-footer {
+    font-size: 7px;
+  }
+
+  .contact-footer span:nth-child(2) {
+    display: none;
+  }
+}
+
+/* ==========================================
+   FINAL CONTACT HEADER THEME
+========================================== */
+
+#header {
+  transition:
+    color .35s ease,
+    background .35s ease;
+}
+
+body.on-contact #header {
+  background: #ed1022;
+  color: #fff;
+  border-color: rgba(255,255,255,.2);
+}
+
+body.on-contact #header a {
+  color: #fff;
+}
+
+body.on-contact #header .active {
+  color: #ed1022;
+  background: #fff;
+}
+
+body.on-contact #header #menuToggle {
+  color: #fff;
+}
+
+body.on-contact #header a[href="#contact"] {
+  border-color: #fff;
+}
+
+/* ==========================================
+   FIX SLIDE 6 / SLIDE 7 OVERLAP
+========================================== */
+
+.slides-stage,
+#slidesStage {
+  isolation: isolate;
+}
+
+/* Awards below Contact */
+#awards {
+  z-index: 6 !important;
+}
+
+/* Contact above Awards */
+#contact {
+  position: absolute !important;
+  inset: 0;
+  z-index: 20 !important;
+  background: #ed1022 !important;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Transition line above slides */
+#contactTransitionSvg {
+  z-index: 21 !important;
+  pointer-events: none;
+}
+
+/* Keep Contact content within Contact */
+.contact-big-title {
+  z-index: 1;
+}
+
+.contact-character {
+  z-index: 3;
+}
+
+.contact-top,
+.contact-left,
+.contact-right,
+.contact-footer {
+  z-index: 5;
+}
+
+/* Disable hidden Awards elements on Contact */
+body.contact-visible #awards {
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+.contact-character {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: min(42vw, 620px);
+  height: 82%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.contact-person {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+}
+/* CONTACT EMAIL */
+
+.contact-email {
+  display: inline-block;
+  max-width: 100%;
+  color: #fff;
+  font-family: "Anton", sans-serif;
+  font-size: clamp(18px, 2.5vw, 38px);
+  line-height: 1.2;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  border-bottom: 2px solid white;
+  padding-bottom: 8px;
+  transition: opacity 0.3s ease;
+}
+
+.contact-email:hover {
+  opacity: 0.7;
+}
+
+/* ==================================================
+   MOBILE FINAL FIX
+   PROJECTS + JOURNEY + AWARDS
+   Desktop design unchanged
+================================================== */
+
+@media (max-width: 700px) {
+
+  /* ================================================
+     01. PROJECTS SLIDE
+  ================================================ */
+
+  .projects-content {
+    top: 15% !important;
+    left: 4%;
+    width: 92%;
+    height: 53%;
+    right: auto;
+    transform: none;
+  }
+
+  .projects-intro {
+    margin-bottom: 7px;
+  }
+
+  .projects-intro h2 {
+    font-size: clamp(27px, 7vw, 37px);
+    line-height: 1;
+  }
+
+  .project-stack {
+    min-height: 0;
+    border-radius: 12px;
+  }
+
+  .project-panel,
+  .project-panel-content {
+    box-sizing: border-box;
+  }
+
+  .project-panel-content {
+    padding: 3px 2px 0;
+  }
+
+  .project-heading {
+    font-size: clamp(26px, 7vw, 38px);
+    line-height: 1;
+  }
+
+  .project-description {
+    margin: 5px 0;
+    font-size: 9px;
+    line-height: 1.35;
+  }
+
+  .project-tags {
+    gap: 4px;
+    margin-bottom: 5px;
+  }
+
+  .project-tags span {
+    padding: 4px 7px;
+  }
+
+  .project-link {
+    margin-bottom: 6px;
+  }
+
+  /* Fix banner cropping */
+
+  .project-preview {
+    flex: 1 1 auto;
+    min-height: 0 !important;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 11px;
+    background: #fff;
+  }
+
+  .project-preview img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain !important;
+    object-position: center;
+  }
+
+  /* Laptop fully visible */
+
+  .projects-visual {
+    position: absolute;
+    right: 0 !important;
+    bottom: 25px !important;
+    left: auto;
+    width: 61% !important;
+    height: 27% !important;
+    overflow: visible;
+  }
+
+  .projects-person {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+  }
+
+  .projects-progress {
+    padding-top: 7px;
+  }
+
+  /* ================================================
+     03. AWARDS SLIDE
+  ================================================ */
+
+  .awards-content {
+    top: 15% !important;
+    left: 4%;
+    width: 92%;
+    height: 55%;
+    transform: none;
+  }
+
+  .awards-heading {
+    margin-bottom: 12px;
+    font-size: clamp(35px, 9vw, 47px);
+    line-height: 1;
+  }
+
+  /* All three stats boxes equal size */
+
+  .awards-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+    align-items: stretch;
+  }
+
+  .awards-stat {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    height: 84px !important;
+    min-height: 84px;
+    padding: 10px 8px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .awards-stat strong {
+    display: block;
+    font-size: 31px;
+    line-height: 1;
+    margin: 0;
+  }
+
+  .awards-stat span {
+    display: block;
+    font-size: 7px;
+    line-height: 1.25;
+    overflow-wrap: break-word;
+  }
+
+  .awards-carousel-title {
+    margin: 15px 2px 8px;
+  }
+
+  /* Same-size cards in rotating cylinder */
+
+  .awards-carousel {
+    position: relative;
+    flex: 1 1 auto;
+    width: 100%;
+    min-height: 150px;
+    max-height: 200px;
+    perspective: 950px;
+    perspective-origin: center;
+    transform-style: preserve-3d;
+    overflow: visible;
+  }
+
+  .awards-card {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 53% !important;
+    height: 90% !important;
+    min-height: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+  }
+
+  .awards-card-inner {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .awards-card-inner h3 {
+    font-size: clamp(19px, 5vw, 25px);
+    line-height: 1;
+    overflow-wrap: anywhere;
+  }
+
+  .awards-card-inner p {
+    font-size: 9px;
+  }
+
+  .awards-card-inner a {
+    font-size: 8px;
+    margin-top: 6px;
+  }
+
+  .awards-description {
+    margin-top: 9px;
+    max-width: 100%;
+    font-size: 9px;
+    line-height: 1.4;
+  }
+
+  /* Character at bottom right */
+
+  .awards-visual {
+    right: -1% !important;
+    bottom: 24px !important;
+    width: 47% !important;
+    height: 28% !important;
+    overflow: visible;
+  }
+
+  .awards-person {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+  }
+
+  .awards-outline {
+    font-size: 40vw;
+  }
+
+}
+
+
+/* ================================================
+   SHORT MOBILE SCREENS
+================================================ */
+
+@media (max-width: 700px) and (max-height: 740px) {
+
+  .projects-content {
+    top: 13% !important;
+    height: 56%;
+  }
+
+  .projects-visual {
+    height: 25% !important;
+  }
+
+  .awards-content {
+    top: 13% !important;
+    height: 57%;
+  }
+
+  .awards-visual {
+    height: 25% !important;
+  }
+
+}
+
+/* =====================================================
+   JOURNEY MOBILE - SINGLE COMPACT LAYOUT
+   Full photo on left, ALL years on right
+===================================================== */
+@media (max-width: 700px) {
+  .journey-content {
+    position: absolute;
+    top: 15%; left: 4%; right: 4%;
+    width: 92%; height: 78%;
+    max-height: none;
+    transform: none;
+    z-index: 12;
+    display: block;
+  }
+  .journey-kicker { font-size: 8px; margin-bottom: 4px; }
+  .journey-heading {
+    font-size: clamp(31px, 8vw, 44px);
+    line-height: 1; margin: 0 0 12px;
+  }
+  .journey-timeline {
+    position: absolute;
+    top: 26%; left: 39%; right: 0;
+    padding-left: 16px;
+  }
+  .journey-timeline::before { left: 4px; }
+  .journey-item { margin: 0 0 clamp(12px, 2.2svh, 23px); gap: 0; }
+  .journey-dot { left: -16px; top: 3px; width: 10px; height: 10px; }
+  .journey-item-body { width: 100%; min-width: 0; }
+  .journey-item-body small { font-size: 8px; margin-bottom: 4px; }
+  .journey-item-body h3 {
+    font-size: clamp(14px, 3.8vw, 19px);
+    line-height: 1.1; margin: 0 0 5px;
+  }
+  .journey-item-body p { font-size: 9px; line-height: 1.4; }
+  .journey-visual {
+    position: absolute;
+    left: 0; right: auto; bottom: 35px;
+    width: 39%; height: 57%;
+    z-index: 5; overflow: visible;
+  }
+  .journey-person {
+    display: block; width: 100%; height: 100%;
+    object-fit: contain; object-position: left bottom;
+  }
+  .journey-background-year {
+    top: 22%; left: 3%; font-size: 37vw;
+    pointer-events: none;
+  }
+}
+@media (max-width: 700px) and (max-height: 740px) {
+  .journey-timeline { top: 23%; }
+  .journey-item { margin-bottom: 9px; }
+  .journey-item-body h3 { font-size: 14px; }
+  .journey-item-body p { font-size: 8px; }
+  .journey-visual { height: 52%; }
+}
+
+/* ==========================================
+   FINAL MOBILE FIX — ALL MAIN SLIDES
+========================================== */
+
+@media (max-width: 700px) {
+
+  /* HOME */
+  .hero-content {
+    position: absolute;
+    top: 16% !important;
+    left: 5% !important;
+    width: 90% !important;
+    transform: none !important;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(34px, 9vw, 54px) !important;
+    line-height: 1;
+  }
+
+  .hero-content h1 span {
+    white-space: normal;
+  }
+
+  .hero-description {
+    margin: 12px 0 16px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .hero-background-name {
+    position: absolute;
+    top: auto !important;
+    bottom: 34% !important;
+    left: 5% !important;
+    right: auto !important;
+    font-size: clamp(65px, 17vw, 105px) !important;
+    white-space: nowrap;
+  }
+
+  .hero-person {
+    max-width: 100%;
+    overflow: visible;
+  }
+
+  /* ABOUT */
+  .about-information {
+    top: 48% !important;
+    left: 5% !important;
+    right: 5% !important;
+    width: 90% !important;
+    transform: none !important;
+  }
+
+  .about-heading {
+    font-size: clamp(42px, 11vw, 65px) !important;
+    line-height: .95;
+    gap: 0;
+  }
+
+  .about-paragraph {
+    margin: 12px 0;
+    font-size: 11px;
+    line-height: 1.45;
+  }
+
+  .about-facts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  .about-fact {
+    min-width: 0;
+    height: 83px;
+    padding: 9px 7px;
+    box-sizing: border-box;
+  }
+
+  .about-fact strong {
+    font-size: 27px;
+    margin-bottom: 8px;
+  }
+
+  .about-fact span {
+    font-size: 7px;
+    line-height: 1.3;
+  }
+
+  /* JOURNEY */
+  .journey-content {
+    position: absolute;
+    top: 14% !important;
+    left: 4% !important;
+    right: 4% !important;
+    width: 92% !important;
+    height: 79% !important;
+    max-height: none;
+    transform: none !important;
+    z-index: 12;
+  }
+
+  .journey-heading {
+    font-size: clamp(30px, 8vw, 43px) !important;
+    margin: 0 0 8px;
+  }
+
+  /* All years beside the character */
+  .journey-timeline {
+    position: absolute;
+    top: 22%;
+    left: 40%;
+    right: 0;
+    width: 60%;
+    padding-left: 15px;
+    box-sizing: border-box;
+  }
+
+  .journey-timeline::before {
+    left: 4px;
+  }
+
+  .journey-item {
+    margin-bottom: clamp(10px, 2.1svh, 19px);
+    min-height: 0;
+  }
+
+  .journey-dot {
+    left: -15px;
+    top: 3px;
+    width: 10px;
+    height: 10px;
+  }
+
+  .journey-item-body h3 {
+    font-size: clamp(13px, 3.6vw, 18px);
+    line-height: 1.1;
+    margin-bottom: 4px;
+  }
+
+  .journey-item-body small {
+    font-size: 8px;
+  }
+
+  .journey-item-body p {
+    font-size: 9px;
+    line-height: 1.35;
+  }
+
+  .journey-visual {
+    left: 1% !important;
+    bottom: 30px !important;
+    width: 36% !important;
+    height: 47% !important;
+    overflow: visible;
+    z-index: 5;
+  }
+
+  .journey-person {
+    width: 100%;
+    height: 100%;
+    object-fit: contain !important;
+    object-position: left bottom;
+  }
+
+  /* Background year no longer covers text */
+  .journey-background-year {
+    top: 18% !important;
+    left: 1% !important;
+    font-size: 27vw !important;
+    opacity: .16;
+    -webkit-text-stroke: 1px #ed1022;
+    white-space: nowrap;
+    z-index: 0;
+  }
+
+  /* AWARDS */
+  .awards-content {
+    top: 15% !important;
+    left: 5% !important;
+    width: 90% !important;
+    height: 56% !important;
+    transform: none !important;
+  }
+
+  .awards-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  .awards-stat {
+    height: 82px !important;
+    min-height: 82px;
+    box-sizing: border-box;
+  }
+
+  .awards-carousel {
+    width: 100%;
+    min-height: 150px;
+    max-height: 190px;
+    overflow: visible;
+    perspective: 1000px;
+  }
+
+  .awards-card {
+    top: 50%;
+    left: 50%;
+    width: 50% !important;
+    height: 88% !important;
+    box-sizing: border-box;
+  }
+
+  .awards-card-inner {
+    width: 100%;
+    height: 100%;
+    padding: 11px;
+    box-sizing: border-box;
+  }
+
+  .awards-card-inner h3 {
+    font-size: clamp(18px, 4.8vw, 25px);
+    line-height: 1;
+  }
+
+  .awards-visual {
+    right: 0 !important;
+    bottom: 25px !important;
+    width: 43% !important;
+    height: 27% !important;
+  }
+
+  .awards-person {
+    width: 100%;
+    height: 100%;
+    object-fit: contain !important;
+    object-position: center bottom;
+  }
+}
+
+@media (max-width: 700px) and (max-height: 740px) {
+  .about-information { top: 45% !important; }
+  .journey-timeline { top: 19%; }
+  .journey-item { margin-bottom: 8px; }
+  .journey-item-body p { font-size: 8px; }
+  .journey-visual { height: 42% !important; }
+  .awards-content { top: 13% !important; }
+}
+@media (max-width:700px){
+
+  /* =========================
+     ABOUT
+  ========================= */
+  .about-information{
+    top:50% !important;
+    left:5% !important;
+    right:5% !important;
+    width:90% !important;
+    transform:none !important;
+  }
+
+  .about-heading{
+    font-size:clamp(42px,11vw,64px) !important;
+    line-height:.95;
+    margin:0;
+  }
+
+  /* MORE ke piche jo caption text aa raha tha hide */
+  .about-image-caption{
+    display:none !important;
+  }
+
+  .about-paragraph{
+    margin:12px 0 14px;
+    font-size:11px;
+    line-height:1.45;
+  }
+
+  .about-facts{
+    display:grid !important;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:6px;
+  }
+
+  .about-fact{
+    min-width:0;
+    height:86px;
+    padding:8px 7px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+  }
+
+  .about-fact strong{
+    margin:0;
+    font-size:26px;
+    line-height:1;
+  }
+
+  .about-fact span{
+    display:block;
+    font-size:8px;
+    line-height:1.25;
+    word-break:break-word;
+  }
+
+  /* =========================
+     JOURNEY
+     years image ke right side
+  ========================= */
+  .journey-content{
+    position:absolute;
+    top:14% !important;
+    left:4% !important;
+    right:4% !important;
+    width:92% !important;
+    height:80% !important;
+    transform:none !important;
+  }
+
+  .journey-heading{
+    font-size:clamp(30px,8vw,44px) !important;
+    margin:0 0 8px;
+  }
+
+  .journey-background-year{
+    top:18% !important;
+    left:0 !important;
+    font-size:27vw !important;
+    opacity:.16;
+    -webkit-text-stroke:1px #ed1022;
+    z-index:0;
+  }
+
+  .journey-timeline{
+    position:absolute;
+    top:22%;
+    left:40%;
+    right:0;
+    width:60%;
+    padding-left:15px;
+    box-sizing:border-box;
+  }
+
+  .journey-timeline::before{
+    left:4px;
+  }
+
+  .journey-item{
+    margin-bottom:14px;
+    min-height:0;
+  }
+
+  .journey-dot{
+    left:-15px;
+    top:3px;
+    width:10px;
+    height:10px;
+  }
+
+  .journey-item-body small{
+    font-size:8px;
+  }
+
+  .journey-item-body h3{
+    font-size:clamp(14px,3.8vw,18px);
+    line-height:1.1;
+    margin:3px 0;
+  }
+
+  .journey-item-body p{
+    font-size:9px;
+    line-height:1.35;
+  }
+
+  .journey-visual{
+    left:2% !important;
+    bottom:28px !important;
+    width:35% !important;
+    height:46% !important;
+    overflow:visible;
+  }
+
+  .journey-person{
+    width:100%;
+    height:100%;
+    object-fit:contain !important;
+    object-position:left bottom;
+  }
+
+  /* =========================
+     AWARDS / PROOF OF WORK
+     image 06 ke sath center me
+  ========================= */
+  .awards-visual{
+    left:72% !important;
+    right:auto !important;
+    bottom:26px !important;
+    width:29% !important;
+    height:27% !important;
+    transform:translateX(-50%);
+  }
+
+  .awards-person{
+    width:100%;
+    height:100%;
+    object-fit:contain !important;
+    object-position:center bottom;
+  }
+
+  .awards-outline{
+    left:72% !important;
+    right:auto !important;
+    transform:translateX(-50%);
+    font-size:39vw !important;
+  }
+}
+
+/* short mobile */
+@media (max-width:700px) and (max-height:740px){
+  .about-information{ top:47% !important; }
+  .journey-timeline{ top:20%; }
+  .journey-item{ margin-bottom:10px; }
+  .journey-item-body p{ font-size:8px; }
+  .journey-visual{ height:42% !important; }
+}/* ======================================
+   RESTORE OLD MOBILE LAYOUT
+   JOURNEY + AWARDS
+====================================== */
+
+@media (max-width: 700px) {
+
+  /* JOURNEY - OLD LAYOUT */
+
+  .journey-content {
+    top: 15% !important;
+    left: 5% !important;
+    width: 90% !important;
+    height: auto !important;
+    transform: none !important;
+  }
+
+  .journey-timeline {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    width: 100% !important;
+    padding-left: 23px !important;
+  }
+
+  .journey-item {
+    padding-left: 0 !important;
+    margin-bottom: 15px !important;
+  }
+
+  .journey-visual {
+    position: absolute;
+    left: 0 !important;
+    right: auto !important;
+    bottom: 28px !important;
+    width: 40% !important;
+    height: 32% !important;
+  }
+
+  .journey-background-year {
+    top: 19% !important;
+    left: 3% !important;
+    font-size: 38vw !important;
+    opacity: 0.3 !important;
+  }
+
+  /* AWARDS - OLD LAYOUT */
+
+  .awards-content {
+    top: 15% !important;
+    left: 4% !important;
+    width: 92% !important;
+    height: 55% !important;
+    transform: none !important;
+  }
+
+  .awards-carousel {
+    min-height: 150px !important;
+    max-height: 200px !important;
+  }
+
+  .awards-card {
+    width: 53% !important;
+    height: 90% !important;
+  }
+
+  .awards-visual {
+    position: absolute;
+    left: auto !important;
+    right: -1% !important;
+    bottom: 24px !important;
+    width: 47% !important;
+    height: 28% !important;
+    transform: none !important;
+  }
+
+  .awards-outline {
+    left: auto !important;
+    right: 7% !important;
+    transform: none !important;
+    font-size: 40vw !important;
+  }
+}
+/* =====================================
+   JOURNEY MOBILE - YEAR BESIDE IMAGE
+===================================== */
+
+@media (max-width: 700px) {
+
+  /* Big background year */
+  .journey-background-year {
+    position: absolute !important;
+    top: auto !important;
+    bottom: 14% !important;
+    left: 39% !important;
+    right: auto !important;
+
+    font-size: clamp(90px, 24vw, 145px) !important;
+    line-height: 1 !important;
+    white-space: nowrap;
+
+    color: transparent !important;
+    -webkit-text-stroke: 1.5px #ed1022 !important;
+
+    opacity: 0.55 !important;
+    transform: none !important;
+    z-index: 1 !important;
+    pointer-events: none;
+  }
+
+  /* Character left-bottom */
+  .journey-visual {
+    position: absolute !important;
+    left: 2% !important;
+    right: auto !important;
+    bottom: 28px !important;
+
+    width: 35% !important;
+    height: 38% !important;
+
+    z-index: 3 !important;
+    overflow: visible !important;
+  }
+
+  .journey-person {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: left bottom !important;
+  }
+
+  /* Timeline above the year */
+  .journey-content {
+    z-index: 5 !important;
+  }
+
+  .journey-heading {
+    margin-bottom: 12px !important;
+  }
+}
+
+/* ==========================================
+   SLIDE 6 - MOBILE FINAL DESIGN
+   Center character + background 06
+========================================== */
+
+@media (max-width: 700px) {
+
+  /* Main Awards content */
+  .awards-content {
+    top: 15% !important;
+    left: 4% !important;
+    width: 92% !important;
+    height: 56% !important;
+    transform: none !important;
+  }
+
+  /* Equal size stats boxes */
+  .awards-stats {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 7px;
+    align-items: stretch;
+  }
+
+  .awards-stat {
+    box-sizing: border-box;
+    width: 100%;
+    height: 85px !important;
+    min-height: 85px !important;
+    padding: 10px 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .awards-stat strong {
+    margin: 0;
+    font-size: 30px;
+    line-height: 1;
+  }
+
+  .awards-stat span {
+    font-size: 7px;
+    line-height: 1.3;
+  }
+
+  /* Carousel centered */
+  .awards-carousel {
+    position: relative;
+    width: 100%;
+    min-height: 155px;
+    max-height: 195px;
+    margin: 0 auto;
+    perspective: 1100px;
+    overflow: visible;
+  }
+
+  /* Every project card same size */
+  .awards-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 48% !important;
+    height: 90% !important;
+    box-sizing: border-box;
+  }
+
+  .awards-card-inner {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  /* Description above the character */
+  .awards-description {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 10px;
+    line-height: 1.4;
+  }
+
+  /* Character centered at bottom */
+  .awards-visual {
+    position: absolute !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: 25px !important;
+    width: 54% !important;
+    height: 28% !important;
+    transform: translateX(-50%) !important;
+    z-index: 5;
+    overflow: visible;
+    pointer-events: none;
+  }
+
+  .awards-person {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center bottom !important;
+  }
+
+  /* Large 06 behind character */
+  .awards-outline {
+    position: absolute !important;
+    top: auto !important;
+    bottom: 0 !important;
+    left: 50% !important;
+    right: auto !important;
+    font-size: 54vw !important;
+    line-height: 1 !important;
+    white-space: nowrap;
+    transform: translateX(-50%) !important;
+    color: transparent !important;
+    -webkit-text-stroke: 1.5px rgba(237,16,34,.35);
+    z-index: 0;
+  }
+
+  .awards-person {
+    z-index: 2;
+  }
+}
+
+/* Smaller phones */
+@media (max-width: 700px) and (max-height: 740px) {
+  .awards-content {
+    top: 13% !important;
+    height: 55% !important;
+  }
+
+  .awards-visual {
+    height: 26% !important;
+  }
+}
+@media (max-width: 700px) {
+  .awards-outline {
+    font-size: 43vw !important;
+  }
+}
+/* MOBILE PROJECT HEADING FIX */
+
+@media (max-width: 700px) {
+
+  .projects-top {
+    top: 105px !important;
+    left: 5% !important;
+    right: 5% !important;
+  }
+
+  .projects-intro {
+    position: relative !important;
+    margin-top: 45px !important;
+  }
+
+  .projects-intro h2 {
+    margin-top: 10px !important;
+  }
+
+}
+/* SLIDE 6 - MOBILE HEADING OVERLAP FIX */
+
+@media (max-width: 700px) {
+
+  .awards-top {
+    top: 105px !important;
+    left: 5% !important;
+    right: 5% !important;
+  }
+
+  .awards-content {
+    top: 145px !important;
+    left: 5% !important;
+    width: 90% !important;
+    height: calc(58% - 45px) !important;
+    transform: none !important;
+  }
+
+  .awards-kicker {
+    margin: 0 0 8px !important;
+  }
+
+  .awards-heading {
+    margin: 0 0 14px !important;
+    line-height: 1 !important;
+  }
+}
+/* SLIDE 6 - MOBILE SMALL GAP FIX */
+
+@media (max-width: 700px) {
+  .awards-top {
+    top: 100px !important;
+  }
+
+  .awards-content {
+    top: 125px !important;
+    height: calc(58% - 25px) !important;
+  }
+
+  .awards-kicker {
+    margin-bottom: 5px !important;
+  }
+
+  .awards-heading {
+    margin-bottom: 10px !important;
+  }
+}
